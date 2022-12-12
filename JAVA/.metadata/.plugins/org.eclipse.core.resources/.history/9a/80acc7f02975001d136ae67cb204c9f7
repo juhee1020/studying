@@ -1,0 +1,8 @@
+package com.lec.ex02_output;
+/*
+
+*/
+public class WriteMain {
+	public static void main(String[] args) {
+	}
+}

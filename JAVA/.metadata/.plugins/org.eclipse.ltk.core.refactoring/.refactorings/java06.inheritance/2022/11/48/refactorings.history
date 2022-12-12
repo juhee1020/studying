@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;java06.inheritance&apos;&#x0D;&#x0A;- Original project: &apos;java06.inheritance&apos;&#x0D;&#x0A;- Original element: &apos;com.lec.ex06_promotion.typechange.Child.java&apos;" description="Delete element" element1="/src&lt;com.lec.ex06_promotion.typechange{Child.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1669270641857" subPackages="false" version="1.0"/>
+</session>

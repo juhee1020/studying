@@ -1,0 +1,5 @@
+package com.lec.ex06_fifo_lifo;
+public class StackMain {
+	public static void main(String[] args) {
+	}
+}

@@ -1,0 +1,15 @@
+package com.lec.ex04_tree.set;
+import java.util.*;
+
+public class TreeSetMain3 {
+	public static void main(String[] args) {
+		TreeSet<String> city=new TreeSet<>();
+		city.add("파리");
+		city.add("런던");
+		city.add("서울");
+		city.add("홍콩");
+		city.add("뮌헨");
+		city.add("마드리드");
+		city.add("뉴욕");
+	}
+}

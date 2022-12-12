@@ -1,0 +1,66 @@
+package com.lec.ex05_compare;
+import java.util.*;
+/*
+	Comparable과 Comparator
+	
+	
+	
+	클래스캐스트익셉션 예외 발생.
+*/
+public class ComparableMain {
+
+	public static void main(String[] args) {
+		TreeSet<Person> ts=new TreeSet<>();
+		ts.add(new Person("에브리바디",2013));
+		ts.add(new Person("뷰",2015));
+		ts.add(new Person("돈콜미",2020));
+		ts.add(new Person("콜미베이비",2008));
+		ts.add(new Person("롤리폴리",2015));
+		ts.add(new Person("칠성사이다",1999));
+		
+		System.out.println("총 객체 : "+ts.size()); // 1
+		// 아래 컴페어투에 리턴 0 이라서 다 같은놈으로 인식하기 때문...
+		
+		Iterator<Person> shinee=ts.iterator();
+		while(shinee.hasNext()) {
+			Person person=shinee.next();
+			System.out.println(person.name +" / "+ person.year);
+		}
+	}
+
+}
+
+class Person implements Comparable<Person>{
+	String name; int year;
+
+	public Person(String name, int year) {
+		super();this.name = name;this.year = year;
+	}
+
+	@Override
+	/* p763 보면 compareTo(T t) 
+	> 주어진 객체와 같으면 0 리턴
+	> 주어진 객체보다 작으면 음수 리턴
+	> 주어진 객체보다 크면 양수 리턴 */
+	public int compareTo(Person o) {
+		// 이름순 정렬
+		/*return this.name.compareTo(o.name); 
+		이름이 같으면 하나만 뜬다. (set은 중복 안됨)*/
+
+
+		// 이름과 연도
+		/*String x=this.name+this.year;
+		String y=o.name+o.year;
+		return x.compareTo(y);*/
+
+
+		// 나이로만 비교 / if로 / 삼항연산자
+		/*Integer a=this.year;
+		Integer b=o.year;
+		return a.compareTo(b);*/
+		/*if(this.year==o.year) {return 0;}
+		else if(this.year>o.year) {return 1;}
+		else return -1;*/
+		return this.year>o.year?1:-1;
+	}
+}

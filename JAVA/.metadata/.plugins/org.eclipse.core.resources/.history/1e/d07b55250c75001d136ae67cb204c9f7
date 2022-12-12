@@ -1,0 +1,10 @@
+package com.lec.ex05_compare;
+
+public class ComparableMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

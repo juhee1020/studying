@@ -1,0 +1,12 @@
+package com.lec.ex01_input;
+
+public class Zzz {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char[] charArray2 = new char[]{'h','i','!','t','h','e','r','e'};
+		String ddd="";
+		ddd=new String(charArray2,0,3);
+		System.out.println(ddd);
+	}
+}

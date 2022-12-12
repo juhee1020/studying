@@ -1,0 +1,12 @@
+package com.lec.ex02_board;
+
+public interface BoardDAOService {
+	void createBoard();// 글쓰기
+	void viewBoard(int bno);// 본문조회
+	void updateBoard(int bno); // 글수정
+	void deleteBoard(int bno); // 글삭제
+	void listBoard(); // 전체글조회
+	void findBySubjectBoard(String subject); // 제목별조회
+	void findByWriterBoard(String writer); // 작성자별조회
+	
+}

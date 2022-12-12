@@ -1,0 +1,38 @@
+package com.lec.ex01_basic;
+import java.sql.*;
+
+public class SelectOneMain {
+
+	final static String DRV = "oracle.jdbc.OracleDriver";
+	final static String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+	final static String USR = "scott";
+	final static String PW = "tiger";
+
+	static Connection conn= null;
+	static PreparedStatement pstmt=null;
+	static ResultSet rs=null;
+
+	public static void main(String[] args) {
+		try {
+			Class.forName(DRV);
+			conn=DriverManager.getConnection(URL, USR, PW);
+
+			String sql="select * from emp where empno=? and job=?";
+			int row=0;
+
+			// emp테이블에서 한개의 row 읽기
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, 7369);
+			pstmt.setString(2, "CLERK");
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+			}else System.out.println("자료없음");
+			
+		} catch (Exception e) {
+			System.out.println("DB연결실패");
+			e.printStackTrace();
+		}
+	}
+}

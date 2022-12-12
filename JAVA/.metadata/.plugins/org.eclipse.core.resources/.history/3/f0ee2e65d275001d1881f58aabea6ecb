@@ -1,0 +1,16 @@
+package com.lec.ex01_basic;
+import java.sql.*;
+
+public class SelectOneMain {
+	final static String DRV = "oracle.jdbc.OracleDriver";
+	final static String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+	final static String USR = "scott";
+	final static String PW = "tiger";
+	
+	Connection conn= null;
+	
+	
+	public static void main(String[] args) {
+
+	}
+}

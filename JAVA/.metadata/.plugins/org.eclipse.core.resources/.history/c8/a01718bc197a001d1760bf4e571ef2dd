@@ -1,0 +1,12 @@
+package com.lec.ex01_input;
+
+public class Zzz {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char[] zzz=new char[50];
+		String ddd="블랙핑크 인 유어 에어리아";
+		ddd=new String(zzz,0,5);
+	}
+
+}

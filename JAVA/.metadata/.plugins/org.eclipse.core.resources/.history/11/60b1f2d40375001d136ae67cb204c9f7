@@ -1,0 +1,8 @@
+package com.lec.ex04_tree.set;
+import java.util.*;
+
+public class TreeSetMain2 {
+	public static void main(String[] args) {
+		TreeSet<Integer> scores=new TreeSet<>();
+	}
+}

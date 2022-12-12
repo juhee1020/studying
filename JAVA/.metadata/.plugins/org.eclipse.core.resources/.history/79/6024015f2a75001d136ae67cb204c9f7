@@ -1,0 +1,17 @@
+package com.lec.ex02_output;
+import java.io.*;
+
+/*
+	OutputStream
+	
+	FileOutputStream, PrintStream, BufferedOutputStream, DataOutputStream은 모두 
+	OutputStream를 상속한다.
+	
+	OutputStream의 주요 메서드
+*/
+public class WriteMain {
+	public static void main(String[] args) throws Exception {
+		OutputStream os=new FileOutputStream("src/com/lec/ex01_input/news.txt");
+		System.out.println();
+	}
+}

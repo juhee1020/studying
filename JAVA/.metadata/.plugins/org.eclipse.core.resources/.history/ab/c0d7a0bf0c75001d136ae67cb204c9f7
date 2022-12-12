@@ -1,0 +1,14 @@
+package com.lec.ex05_compare;
+import java.util.*;
+/*
+	Comparable과 Comparator
+	
+	
+*/
+public class ComparableMain {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

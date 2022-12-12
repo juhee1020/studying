@@ -1,0 +1,13 @@
+package com.lec.ex01_input;
+
+public class Zzz {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char[] zzz=new char[5];
+		zzz= {2,6,3,4,3};
+		String ddd="";
+		ddd=new String(zzz,0,5);
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.lec.ex03_connector;
+import java.sql.*;
+import com.lec.db.JDBCconnector;
+
+public class MyConnector {
+	public static void main(String[] args) throws Exception{
+			Connection conn=JDBCconnector.getConnection();
+			
+			PreparedStatement pstmt=null;
+			ResultSet rs=null;
+	}
+}

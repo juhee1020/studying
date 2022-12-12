@@ -1,0 +1,8 @@
+package com.lec.db;
+import java.sql.Connection;
+
+public class JDBCconnector {
+	public static Connection getConnection() {
+		return null;
+	}
+}

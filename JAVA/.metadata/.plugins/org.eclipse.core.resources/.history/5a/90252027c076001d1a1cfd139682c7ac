@@ -1,0 +1,5 @@
+package com.lec.ex03_connector;
+public class MyConnector {
+	public static void main(String[] args) {
+	}
+}

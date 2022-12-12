@@ -1,0 +1,15 @@
+package com.lec.ex05_compare;
+public class ComparatorMain {
+	public static void main(String[] args) {
+		
+	}
+}
+
+class Student{
+	String name;int sno;
+
+	public Student(String name, int sno) {
+		super();
+		this.name = name;this.sno = sno;
+	}
+}

@@ -1,0 +1,21 @@
+package com.lec.ex04_tree.map;
+import java.util.*;
+
+public class TreeMapMain1 {
+	public static void main(String[] args) {
+		TreeMap<Integer,String> scores=new TreeMap<>();
+		scores.put(100, "가나다");
+		scores.put(60, "나다라");
+		scores.put(30, "다라마");
+		scores.put(90, "라마바");
+		scores.put(70, "마바사");
+		scores.put(88, "바사아");
+		
+		Map.Entry<Integer, String> student=null;
+		
+		student=scores.firstEntry();
+		System.out.println(student.getValue());
+		
+		
+	}
+}

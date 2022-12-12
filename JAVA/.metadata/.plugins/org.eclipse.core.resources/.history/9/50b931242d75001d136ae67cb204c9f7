@@ -1,0 +1,11 @@
+package com.lec.ex03_reader;
+import java.io.*;
+/*
+	Reader클래식 주요메서드
+	
+*/
+public class ReaderMain {
+	public static void main(String[] args) {
+		Reader is=new FileReader("src/com/lec/ex02_output/output1.txt");
+	}
+}

@@ -1,0 +1,17 @@
+package com.lec.ex02_board;
+
+import java.util.concurrent.TimeUnit;
+
+public class Board {
+
+	public static void main(String[] args) {
+		
+		BoardMenu menu = new BoardMenu(1.0);
+		int menuNo = menu.mainBoardMenu();
+		
+		switch(menuNo){
+		case 1: System.out.println("insert"); break;
+		case 2: System.out.println("select"); break;
+		}
+	}
+}

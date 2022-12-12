@@ -1,0 +1,40 @@
+package com.lec.ex05_compare;
+import java.util.*;
+
+public class ComparatorMain {
+	public static void main(String[] args) {
+		TreeSet<Student> ts=new TreeSet<>(new StudentComparator());
+		ts.add(new Student("트와이스",101));
+		ts.add(new Student("블랙핑크",102));
+		ts.add(new Student("비티에스",103));
+		ts.add(new Student("엔믹스",104));
+		ts.add(new Student("뉴진스",105));
+		
+		Iterator<Student> st=ts.iterator();
+		while(st.hasNext()) {
+			Student std=st.next();
+			System.out.println(std.name+" : "+std.sno);
+		}
+	}
+}
+
+class Student implements Comparator<Student>{
+	String name;int sno;
+
+	public Student(String name, int sno) {
+		super();
+		this.name = name;this.sno = sno;
+	}
+
+	@Override
+	public int compare(Student o1, Student o2) {
+		return 0;
+	}
+}
+
+class StudentComparator implements Comparator<Student> {
+	@Override
+	public int compare(Student o1, Student o2) {
+		return o1.name.compareTo(o2.name);
+	}
+}
