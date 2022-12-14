@@ -1,8 +1,0 @@
-package com.lec.ex04_tree.map;
-import java.util.*;
-
-public class TreeMapMain2 {
-	public static void main(String[] args) {
-		TreeMap<Integer, String> student=new TreeMap<>();
-	}
-}

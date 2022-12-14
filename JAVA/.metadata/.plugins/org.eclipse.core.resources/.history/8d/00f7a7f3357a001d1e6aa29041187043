@@ -1,0 +1,11 @@
+package com.lec.ex01_hello;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ZZZ {
+
+	public static void main(String[] args) {
+		List<Board> abc=new ArrayList<>();
+	}
+}

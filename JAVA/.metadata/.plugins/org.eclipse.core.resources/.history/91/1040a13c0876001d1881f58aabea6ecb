@@ -1,9 +1,0 @@
-package com.lec.prac;
-public class PriorityExample {
-	public static void main(String[] args) {
-		for(int i=1; i<=10; i++) {
-			Thread thread=new CalcThread("thread"+i);
-			System.out.println(thread.getName());
-		}
-	}
-}

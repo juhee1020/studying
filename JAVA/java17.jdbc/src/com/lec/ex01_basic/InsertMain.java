@@ -17,7 +17,8 @@ public class InsertMain {
 			Class.forName(DRV);
 			conn=DriverManager.getConnection(URL, USR, PW);
 			
-			String sql="insert into emp(empno, ename, job, mgr, hiredate, sal, comm, deptno) "+" values(?,?,?,?,?,?,?,?)";
+			String sql="insert into emp(empno, ename, job, mgr, hiredate, sal, comm, deptno) "
+			+" values(?,?,?,?,?,?,?,?)";
 			// "어쩌구저쩌구 " < 띄어쓰기 해주고 " values~~" 앞에도 띄어쓰기
 			
 			pstmt=conn.prepareStatement(sql);

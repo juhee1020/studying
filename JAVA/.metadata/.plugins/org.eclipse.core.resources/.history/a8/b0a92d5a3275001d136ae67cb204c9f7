@@ -1,5 +1,0 @@
-package com.lec.ex05_file;
-public class FileOutputStreamMain {
-	public static void main(String[] args) {
-	}
-}

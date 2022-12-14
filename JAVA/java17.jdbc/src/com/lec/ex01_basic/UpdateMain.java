@@ -2,6 +2,7 @@ package com.lec.ex01_basic;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class UpdateMain {
 	final static String DRV = "oracle.jdbc.OracleDriver";
@@ -29,7 +30,15 @@ public class UpdateMain {
 			System.out.println("emp테이블에 "+row+"건이 추가되었습니다.");
 
 		}catch(Exception e) {
+			System.out.println("DB연결실패!!");
 			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)pstmt.close();
+			} catch (Exception e) {
+				//더미
+			}
 		}
 	}
 }

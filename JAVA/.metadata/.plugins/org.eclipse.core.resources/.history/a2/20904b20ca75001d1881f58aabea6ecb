@@ -1,6 +1,0 @@
-package com.lec.ex01;
-public class JDBCconnection {
-	public static void main(String[] args) {
-		
-	}
-}

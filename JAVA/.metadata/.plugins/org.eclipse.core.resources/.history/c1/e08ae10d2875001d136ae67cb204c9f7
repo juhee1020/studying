@@ -1,6 +1,0 @@
-package com.lec.ex01_input;
-public class ReadMain2 {
-	public static void main(String[] args) {
-		
-	}
-}

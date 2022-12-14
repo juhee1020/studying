@@ -23,6 +23,7 @@ public class DeleteMain {
 
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, 9001);
+			// sql문 첫번째 ?자리에 9001 집어넣음.
 			int row=pstmt.executeUpdate();
 			System.out.println("emp테이블에 "+row+"건이 삭제되었습니다.");
 

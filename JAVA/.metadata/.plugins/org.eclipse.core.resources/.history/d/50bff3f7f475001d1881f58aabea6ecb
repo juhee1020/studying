@@ -1,9 +1,0 @@
-jdbc.drv=oracle.jdbc.OracleDriver
-jdbc.url=jdbc.oracle:thin:@localhost:1521
-jdbc.usr=scott
-jdbc.pwd=tiger
-
-insert=insert into board() values()
-select=select * from board
-update=update board set subject=?, content=? where bno=?
-delete=delete from board where bno=?
