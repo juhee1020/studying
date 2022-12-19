@@ -1,0 +1,21 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- ?name=hong&age=20 -->
+	<ul>
+		<c:choose>
+			<c:when test="${param.name==hong}">
+				<li>사용자의 이름은 <b>${param.name}</b></li>
+			</c:when>
+			<c:when test="${param.age>18}">
+				<li>사용자의 이름은 <b>${param.name}</b></li>
+			</c:when>
+		</c:choose>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<jsp:useBean id="member" class="com.lec.member.Member" scope="request"/>
+
+<div class="container">
+	<h1>로그인(JavaBeans사용법)</h1>
+	<div>id : <%= member.getId() %></div>
+	<div>pw : <%= member.getPassword() %></div>
+	<div>name : <%= member.getName() %></div>
+	<div>email : <%= member.getEmail() %></div>
+</div>

@@ -1,0 +1,42 @@
+package com.lec.web.service;
+import java.sql.*;
+
+import com.lec.web.dao.MessageDAO;
+import com.lec.web.jdbc.*;
+
+public class GetMessageListService {
+	// 싱글톤으로 만들거다.
+	
+	// 기본생성자를 프라이빗으로 만든다.
+	private GetMessageListService() {}
+
+	private static GetMessageListService instance=new GetMessageListService();
+
+	public static GetMessageListService getInstance() {
+		return instance;
+	}
+
+
+	// 한페이지 당 10건씩 보여주기 위해서
+	private static final int MESSAGE_COUNT_PER_PAGE=10;
+
+
+	// 페이징
+	public MessageListView getMessageList(int pageNumber) {
+		Connection conn=null;
+		int currentPage=pageNumber;
+		
+		//커넥션풀에서 사용가능한 Connection을 커넥션제공자에서 가져오기.
+		try {
+			conn= ConnectionProvider.getConnection();
+			MessageDAO messageDAO=MessageDAO.getInstance();
+			
+			// 페이징처리
+			int totalCount=messageDAO.selectCount();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+		return null; // 일단 오류 안뜨게 넣은 null
+	}
+}

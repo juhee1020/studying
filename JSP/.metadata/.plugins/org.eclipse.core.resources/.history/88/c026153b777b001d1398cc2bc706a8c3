@@ -1,0 +1,16 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	BoardList bl=new BoardList();
+	ArrayList<Board> board_list=bl.getBoardList();
+	String bd_tbl="<table board='1'></table>"
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%= bd_table%>
+</body>
+</html>

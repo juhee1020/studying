@@ -1,0 +1,14 @@
+package com.lec.web.service;
+import java.sql.*;
+
+public class DeleteMessageService {
+	private DeleteMessageService() {}
+	private static DeleteMessageService instance=new DeleteMessageService();
+	public static DeleteMessageService getInstance() {
+		return instance;
+	}
+	
+	public void deleteMessage(int id, String pw) {
+		Connection conn=null;
+	}
+}

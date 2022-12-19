@@ -1,0 +1,20 @@
+package com.lec.dbcp;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+
+public class DBCPinit extends HttpServlet{
+	@Override
+	public void init() throws ServletException {
+		//super.init();
+		loadJDBCDriver(); // 어떤 디비 쓸래?
+		initConnectionPool();
+	}
+
+	private void loadJDBCDriver() {
+		// TODO Auto-generated method stub		
+	}
+	
+	private void initConnectionPool() {
+		// TODO Auto-generated method stub	
+	}
+}

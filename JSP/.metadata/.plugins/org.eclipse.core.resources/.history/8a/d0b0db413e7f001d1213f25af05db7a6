@@ -1,0 +1,7 @@
+package com.lec.web.service;
+
+public class GetMessageListService {
+	public GetMessageListService getInstance() {
+		return null;
+	}
+}

@@ -1,0 +1,6 @@
+package com.lec.web.service;
+
+public class MessageListView {
+	
+}
+//한 페이지에 10건씩 나오게 해라.

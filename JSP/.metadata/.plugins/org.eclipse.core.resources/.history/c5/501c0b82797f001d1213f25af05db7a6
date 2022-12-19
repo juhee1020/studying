@@ -1,0 +1,22 @@
+package com.lec.web.service;
+import java.sql.*;
+
+import com.lec.web.jdbc.ConnectionProvider;
+import com.lec.web.jdbc.JDBCUtil;
+
+public class DeleteMessageService {
+	private DeleteMessageService() {}
+	private static DeleteMessageService instance=new DeleteMessageService();
+	public static DeleteMessageService getInstance() {
+		return instance;
+	}
+	
+	public void deleteMessage(int id, String pw) {
+		Connection conn=null;
+		try {
+			conn=ConnectionProvider.getConnection();
+		}catch(SQLException e) {
+			JDBCUtil.rollback(conn);
+		}
+	}
+}

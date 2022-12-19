@@ -1,0 +1,37 @@
+package com.lec.dbcp;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+
+public class DBCPinit extends HttpServlet{
+	@Override
+	public void init() throws ServletException {
+		//super.init();
+		loadJDBCDriver(); // 어떤 디비 쓸래? (오라클, 마리아디비...?)
+		initConnectionPool();
+	}
+
+	private void loadJDBCDriver() {
+		/* Class.forName() 대신에 web.xml에다가 Driver Class를 설정해서 
+		웹서버가 시작할 때 자동으로 등록되도록	*/
+		//driver, url, user, password 설정
+		//getInitParameter(getServletName());
+		String driverClass=getInitParameter("jdbcDriver");
+		try {
+			Class.forName(driverClass);
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException("JDBC드라이버 로딩실패\nweb.xml 초기화 파라미터 jdbcDriver를 확인해보시오.");
+			//e.printStackTrace();
+		}
+	}
+	
+	private void initConnectionPool() {
+		String url=getInitParameter("url");
+		String usr=getInitParameter("user");
+		String pwd=getInitParameter("pass");
+		
+		// 1. Connection factory 생성 (Connection 공장!)
+		// 2. Connection Pool 설정
+		// 3. Connection Pool 설정정보를 이용해서 Connection Pool을 생성
+		// 4. Connection Pool에 제공할 JDBC드라이버를 등록
+	}
+}

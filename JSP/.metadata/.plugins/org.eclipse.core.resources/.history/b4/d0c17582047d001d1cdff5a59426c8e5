@@ -1,0 +1,38 @@
+package com.lec.web.jdbc;
+
+import java.sql.DriverManager;  
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import org.apache.commons.dbcp2.ConnectionFactory;
+import org.apache.commons.dbcp2.DriverManagerConnectionFactory;
+import org.apache.commons.dbcp2.PoolableConnection;
+import org.apache.commons.dbcp2.PoolableConnectionFactory;
+import org.apache.commons.dbcp2.PoolingDriver;
+import org.apache.commons.pool2.impl.GenericObjectPool;
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
+
+public class DBCPInit extends HttpServlet{
+	//@Override
+	public void init() throws ServletException {
+		loadJDBCDriver();
+		initConnectionPool();
+	}
+
+	private void loadJDBCDriver() {
+		// Class.forName() 대신에 web.xml에 Driver Class를 설정
+		// 웹서버가 시작할 때 자동으로 등록되도록 설정
+		// driver, url, user, password
+		String driverClass = getInitParameter("jdbcDriver");
+		try {
+			Class.forName(driverClass);
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException("JDBC드라이버로딩 실패!!!");
+		}
+	}
+	private void initConnectionPool() {
+		String url = getInitParameter("url");
+		String usr = getInitParameter("user");
+		String pwd = getInitParameter("pass");		
+	}
+}

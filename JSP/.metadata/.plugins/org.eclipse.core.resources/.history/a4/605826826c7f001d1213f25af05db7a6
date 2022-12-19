@@ -1,0 +1,9 @@
+package com.lec.web.service;
+
+public class UpdateMessageService {
+	private UpdateMessageService() {}
+	private static UpdateMessageService instance=new UpdateMessageService();
+	public static UpdateMessageService getInstance() {
+		return null;
+	}
+}

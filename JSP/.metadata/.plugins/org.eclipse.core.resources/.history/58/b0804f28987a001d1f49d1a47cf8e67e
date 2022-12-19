@@ -1,0 +1,22 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!--
+	JSP Action Tag
+	
+	1. Action Tag
+		
+		a. 서버나 클라이언트에게 특정 행동을 하도록 명령하는 태그
+		b. JSP페이지에서 페이지와 페이지 사이를 제어
+		c. 다른 페이지의 실행결과를 현재 페이지에 포함
+		d. Java Beans(예를들어 BoardDTO, VO)등의 다양한 기능을 제공
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

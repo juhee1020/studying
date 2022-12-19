@@ -1,0 +1,107 @@
+package com.lec.web.dao;
+
+import java.sql.*;
+import java.util.*;
+
+import com.lec.web.jdbc.JDBCUtil;
+import com.lec.web.model.Message;
+
+public class MessageDAO {
+
+	// singleton
+	private MessageDAO() {};
+	private static MessageDAO messageDAO = new MessageDAO();
+	public static MessageDAO getInstance() { return messageDAO; }
+	
+	public int selectCount(Connection conn) {
+		Statement stmt = null;
+		ResultSet rs = null;
+		String sql = "select count(*) from guestbook_message";
+		
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			rs.next();
+			return rs.getInt(1); // 총방명록건수
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		} finally {
+			JDBCUtil.close(null, stmt, rs);
+		}
+	}
+	
+	public List<Message> selectList(Connection conn, int start, int end) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from guestbook_message " + 
+		             "order by message_id desc limit ?, ?";
+				
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {				
+				List<Message> messageList = new ArrayList<Message>();
+				do {
+					messageList.add(makeMessage(rs));
+				} while(rs.next());
+				return messageList;
+			} else {
+				return Collections.emptyList();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+		return  null; 
+	}
+	
+	public Message makeMessage(ResultSet rs) throws SQLException {		
+		Message message = new Message();
+		message.setId(rs.getInt("message_id"));
+		message.setGuestName(rs.getString("guest_name"));
+		message.setPassword(rs.getString("password"));
+		message.setMessage(rs.getString("message"));
+		return message;
+	}
+	
+	public int insert(Connection conn, Message message) {
+		PreparedStatement pstmt=null;
+		String sql="insert into guestbook_message(guest_name, password, message) "
+				+"values(?,?,?)";
+		try{
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setNString(1, message.getGuestName());
+			pstmt.setNString(2, message.getPassword());
+			pstmt.setNString(3, message.getMessage());
+			return pstmt.executeUpdate();
+		}catch(SQLException e) {return 0;}
+	}
+	public Message select(Connection conn, int id) {
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql="select * from guestbook_message where message_id=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			rs=pstmt.executeQuery();
+			if(rs.next())return makeMessage(rs);
+			else return null;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(null, pstmt, rs);
+		}
+		return null;
+	}
+
+	public void update(Connection conn, int id, String msg) {
+		
+	}
+	public void delete() {}
+	
+}

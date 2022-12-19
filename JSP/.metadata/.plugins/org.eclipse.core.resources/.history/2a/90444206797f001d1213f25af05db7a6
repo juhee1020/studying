@@ -1,0 +1,9 @@
+package com.lec.web.service;
+
+public class DeleteMessageService {
+	private DeleteMessageService() {}
+	private static DeleteMessageService instance=new DeleteMessageService();
+	public static DeleteMessageService getInstance() {
+		return instance;
+	}
+}

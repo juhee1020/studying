@@ -1,0 +1,25 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<hr>
+<h5>jsp01_jstl.jsp의 표현식을 jstl로 바꿔보면</h5>
+	<h1>JSTL</h1>
+	<c:if test="false">
+		<h2>${ "참입니다" }</h2>
+	</c:if>
+
+	<c:if test="${ param.name == 'hong' }">
+		제 이름은 홍길동 입니다!!
+	</c:if>
+	<br />
+
+	<c:if test="${ param.age > 18 }">
+		제 나이는 ${ parma.age }살 입니다. 나는 성인입니다!!
+	</c:if>
+</body>
+</html>
