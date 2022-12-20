@@ -117,19 +117,16 @@ public class MessageDAO {
 	}
 
 
-	public int delete(Connection conn, int id) {
+	public int delete(Connection conn, int id) throws SQLException{
 		PreparedStatement pstmt=null;
-		String sql="DELETE FROM guestbook_message where message_id=?";
+		String sql = "delete from guestbook_message where message_id = ?";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
 			return pstmt.executeUpdate();
-		}catch(SQLException e) {
-			e.printStackTrace();
-			return 0;
 		}finally {
-			JDBCUtil.close(conn, pstmt, null);
+			JDBCUtil.close(null, pstmt, null);
 		}
 	}	
 }

@@ -20,6 +20,7 @@ public class DeleteMessageService {
 			MessageDAO messageDAO=MessageDAO.getInstance();
 			Message message=messageDAO.select(conn, id);
 
+			if(message==null)throw new MessageNotFoundException(id+"번 메세지 찾지 못햇거나 메세지가 등록되지않았음");
 			if(!message.matchPassword(pw)) {
 				throw new InvalidPasswordException("비밀번호 틀림. 다시입력하시오.");
 			}
@@ -29,7 +30,7 @@ public class DeleteMessageService {
 				
 		}catch(SQLException e) {
 			JDBCUtil.rollback(conn);
-			throw new ServiceException("메세지 삭제실패"+e.getMessage());
+			throw new ServiceException("메세지 삭제실패"+e.getMessage(), e);
 		}catch(MessageNotFoundException | InvalidPasswordException e){
 			JDBCUtil.rollback(conn);
 			throw e;
