@@ -4,19 +4,19 @@ import java.util.Date;
 import java.util.Objects;
 
 public class BoardBean {
-  private int board_num;
-  private String board_name;
-  private String board_pass;
-  private String board_subject;
-  private String board_content;
-  private String board_file;
-  private int board_re_ref;
-  private int board_re_lev;
-  private int board_re_seq;
-  private int board_readcount;
-  private Date board_date;
-  
-  
+
+	private int board_num; 		
+	private String board_name; 		
+	private String board_pass;		
+	private String board_subject;		
+	private String board_content;		
+	private String board_file; 		
+	private int board_re_ref; 		
+	private int board_re_lev; 		
+	private int board_re_seq; 		
+	private int board_readcount;		
+	private Date board_date;
+	
 	public int getBoard_num() {
 		return board_num;
 	}
@@ -27,6 +27,7 @@ public class BoardBean {
 	public String getBoard_name() {
 		return board_name;
 	}
+	
 	public void setBoard_name(String board_name) {
 		this.board_name = board_name;
 	}
@@ -34,6 +35,7 @@ public class BoardBean {
 	public String getBoard_pass() {
 		return board_pass;
 	}
+	
 	public void setBoard_pass(String board_pass) {
 		this.board_pass = board_pass;
 	}
@@ -41,6 +43,7 @@ public class BoardBean {
 	public String getBoard_subject() {
 		return board_subject;
 	}
+	
 	public void setBoard_subject(String board_subject) {
 		this.board_subject = board_subject;
 	}
@@ -48,6 +51,7 @@ public class BoardBean {
 	public String getBoard_content() {
 		return board_content;
 	}
+	
 	public void setBoard_content(String board_content) {
 		this.board_content = board_content;
 	}
@@ -55,6 +59,7 @@ public class BoardBean {
 	public String getBoard_file() {
 		return board_file;
 	}
+	
 	public void setBoard_file(String board_file) {
 		this.board_file = board_file;
 	}
@@ -62,6 +67,7 @@ public class BoardBean {
 	public int getBoard_re_ref() {
 		return board_re_ref;
 	}
+	
 	public void setBoard_re_ref(int board_re_ref) {
 		this.board_re_ref = board_re_ref;
 	}
@@ -69,6 +75,7 @@ public class BoardBean {
 	public int getBoard_re_lev() {
 		return board_re_lev;
 	}
+	
 	public void setBoard_re_lev(int board_re_lev) {
 		this.board_re_lev = board_re_lev;
 	}
@@ -76,6 +83,7 @@ public class BoardBean {
 	public int getBoard_re_seq() {
 		return board_re_seq;
 	}
+	
 	public void setBoard_re_seq(int board_re_seq) {
 		this.board_re_seq = board_re_seq;
 	}
@@ -83,6 +91,7 @@ public class BoardBean {
 	public int getBoard_readcount() {
 		return board_readcount;
 	}
+	
 	public void setBoard_readcount(int board_readcount) {
 		this.board_readcount = board_readcount;
 	}
@@ -90,26 +99,22 @@ public class BoardBean {
 	public Date getBoard_date() {
 		return board_date;
 	}
+	
 	public void setBoard_date(Date board_date) {
 		this.board_date = board_date;
 	}
 	
-	
 	@Override
 	public String toString() {
-		return "BoardBean [board_num=" + board_num + ", board_name=" + board_name + ", board_pass=" + board_pass
-				+ ", board_subject=" + board_subject + ", board_content=" + board_content + ", board_file=" + board_file
-				+ ", board_re_ref=" + board_re_ref + ", board_re_lev=" + board_re_lev + ", board_re_seq=" + board_re_seq
-				+ ", board_readcount=" + board_readcount + ", board_date=" + board_date + "]";
+		return "BoardBean [board_num=" + board_num + ", board_name=" + board_name + ", board_subject=" + board_subject
+				+ ", board_readcount=" + board_readcount + "]";
 	}
-	
 	
 	@Override
 	public int hashCode() {
 		return Objects.hash(board_content, board_date, board_file, board_name, board_num, board_pass, board_re_lev,
 				board_re_ref, board_re_seq, board_readcount, board_subject);
 	}
-	
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -126,5 +131,6 @@ public class BoardBean {
 				&& board_re_lev == other.board_re_lev && board_re_ref == other.board_re_ref
 				&& board_re_seq == other.board_re_seq && board_readcount == other.board_readcount
 				&& Objects.equals(board_subject, other.board_subject);
-	}
+	} 
+	
 }
