@@ -23,7 +23,7 @@
 	
 	response.setContentType(sMimeType);
 	response.setHeader("Content-Transfer-Encoding", "binary");
-	response.setHeader("Content-Transfer-Disposition", "attachment; filename=");
+	response.setHeader("Content-Disposition", "attachment; filename=");
 	
 	ServletOutputStream os = response.getOutputStream();
 	int numRead;

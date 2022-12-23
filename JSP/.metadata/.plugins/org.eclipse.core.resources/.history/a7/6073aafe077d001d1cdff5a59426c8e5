@@ -1,8 +1,0 @@
-package com.lec.web.jdbc;
-import java.sql.*;
-
-public class ConnectionProvider {
-	public static Connection getConnection() throws Exception{
-		return DriverManager.getConnection("jdbc:apache:commons:dbcp:guestbook");
-	}
-}

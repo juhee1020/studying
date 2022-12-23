@@ -1,5 +1,0 @@
-package com.lec.web.jdbc;
-
-public class DBCPInit {
-
-}

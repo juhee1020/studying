@@ -1,9 +1,0 @@
-package com.lec.web.jdbc;
-
-import java.sql.*;
-
-public class JDBCUtil {
-	public static void close(Connection conn, Statement stmt, Resultset rs) {
-		
-	}
-}
