@@ -60,7 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" port="8088" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -152,7 +152,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Test" path="/Test" reloadable="true" source="org.eclipse.jst.jee.server:Test"/><Context docBase="jsp01_basic" path="/jsp01_basic" reloadable="true" source="org.eclipse.jst.jee.server:jsp01_basic"/><Context docBase="jsp02_database" path="/jsp02_database" reloadable="true" source="org.eclipse.jst.jee.server:jsp02_database"/><Context docBase="jsp_board" path="/jsp_board" reloadable="true" source="org.eclipse.jst.jee.server:jsp_board"/><Context docBase="jsp03_guestbook" path="/jsp03_guestbook" reloadable="true" source="org.eclipse.jst.jee.server:jsp03_guestbook"/></Host>
+      <Context docBase="jsp06_board" path="/jsp06_board" reloadable="true" source="org.eclipse.jst.jee.server:jsp06_board"/></Host>
     </Engine>
   </Service>
 </Server>

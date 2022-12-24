@@ -22,7 +22,7 @@ public class BoardModifyAction implements Action {
 		ActionFoward forward = null;
 		BoardBean board = null;
 		
-		String saveFolder = "C:\\Users\\ezen\\Desktop\\mh_db\\99.temp\\";
+		String saveFolder = "D:/studying/JSP/99.temp/";
 		int fileSize = 1024*1024*5;
 		
 		ServletContext sct = req.getServletContext();
