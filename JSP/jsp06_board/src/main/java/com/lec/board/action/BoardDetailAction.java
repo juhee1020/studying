@@ -22,7 +22,7 @@ public class BoardDetailAction implements Action {
 		
 		ActionFoward forward = new ActionFoward();
 		req.setAttribute("board", board);
-		forward.setPath("/board/board_detail.jsp?p="+ p + "&f=" + f + "&q=" + q);
+		forward.setPath("/board/board_detail.jsp?p=" + p + "&f=" + f + "&q=" + q);
 		return forward;
 	}
 

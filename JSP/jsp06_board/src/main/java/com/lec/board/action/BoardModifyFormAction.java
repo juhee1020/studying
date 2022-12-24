@@ -12,6 +12,8 @@ public class BoardModifyFormAction implements Action {
 	@Override
 	public ActionFoward execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 
+
+		
 		ActionFoward forward = new ActionFoward();
 		
 		int board_num = Integer.parseInt(req.getParameter("board_num"));
@@ -19,9 +21,14 @@ public class BoardModifyFormAction implements Action {
 		String f = (String) req.getParameter("f");
 		String q = (String) req.getParameter("q");
 		
-		BoardDetailService boardDetailService = new BoardDetailService();
+		
+	
+		
+		BoardDetailService boardDetailService = new BoardDetailService();	
 		BoardBean board = boardDetailService.getBoard(board_num);
 		req.setAttribute("board", board);
+		
+		
 		forward.setPath("/board/board_modify.jsp?p=" + p + "&f=" + f + "&q=" + q);
 		return forward;
 	}

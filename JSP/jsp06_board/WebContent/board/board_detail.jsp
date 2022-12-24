@@ -1,4 +1,4 @@
-<%@page import="java.net.URLEncoder"%>
+<%@page import="java.net.URLEncoder"%> 
 <%@page import="com.lec.board.vo.BoardBean"%>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -7,6 +7,8 @@
 	String p = (String) request.getParameter("p");
 	String f = (String) request.getParameter("f");
 	
+	System.out.println("======> " + p);
+	
 	String q = "";
 	try {
 		q = URLEncoder.encode((String) request.getParameter("q"));
@@ -14,9 +16,13 @@
 		q = "";
 	}
 %>
+<c:set var="p" value="<%= p %>"/>
+<c:set var="f" value="<%= f %>"/>
+<c:set var="q" value="<%= q %>"/>
 <!DOCTYPE html>
 <html>
 <head>
+	
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">	
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -73,7 +79,7 @@
 		
 		<div class="form-group input-group">
 			<a href="boardModifyForm.bo?board_num=<%=board.getBoard_num()%>&p=<%=p%>&f=<%=f%>&q=<%=q%>" class="btn btn-success mr-sm-3">수정</a>
-			<a href="boardDelereForm.bo?board_num=<%=board.getBoard_num()%>&p=<%=p%>&f=<%=f%>&q=<%=q%>" class="btn btn-success mr-sm-3">삭제</a>
+			<a href="boardDeleteForm.bo?board_num=<%=board.getBoard_num()%>&p=<%=p%>&f=<%=f%>&q=<%=q%>" class="btn btn-success mr-sm-3">삭제</a>
 			<a href="boardReplyForm.bo?board_num=<%=board.getBoard_num()%>&p=<%=p%>&f=<%=f%>&q=<%=q%>" class="btn btn-success mr-sm-3">답변</a>
 			<a href="boardList.bo?p=<%=p%>&f=<%=f%>&q=<%=q%>" class="btn btn-success">목록</a>
 		</div>
