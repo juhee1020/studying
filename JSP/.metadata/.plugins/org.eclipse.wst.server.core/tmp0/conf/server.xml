@@ -152,8 +152,8 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="D:\studying\JSP\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\studying\JSP\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jsp06_board" path="/jsp06_board" reloadable="true" source="org.eclipse.jst.jee.server:jsp06_board">
-	<Resource auth="Container" driverClassName="org.mariadb.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="50" name="jdbc/Board" password="12345" type="javax.sql.DataSource" url="jdbc:mariadb://localhost:3306/board" username="root"/>
+      <Context docBase="D:\studying\JSP\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\studying\JSP\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jsp06_member" path="/jsp06_member" reloadable="true" source="org.eclipse.jst.jee.server:jsp06_member">
+	<Resource auth="Container" driverClassName="org.mariadb.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="50" name="jdbc/Member" password="12345" type="javax.sql.DataSource" url="jdbc:mariadb://localhost:3306/board" username="root"/>
 <!-- 
 	1. name    : JNDI로 호출될 이름을 설정, 접근방법 java:comp/env/jdbc/Board
 	2. auth    : DBCP을 관리할 관리자를 지정(Container or Application)
