@@ -88,5 +88,36 @@ public class MemberDAO {
 
 		return memberList;
 	}
+
+
+	//회원추가
+	public int joinMember(MemberBean member) {
+
+		int joinCount=0;
+
+		PreparedStatement pstmt=null;
+		String sql="insert into board_member(member_id, member_pw, member_name, member_age, member_gender, member_email) "
+				+" values(?,?,?,?,?,?)";
+
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, member.getMember_id());
+			pstmt.setString(2, member.getMember_pw());
+			pstmt.setString(3, member.getMember_name());
+			pstmt.setInt(4, member.getMember_age());
+			pstmt.setString(5, member.getMember_gender());
+			pstmt.setString(6, member.getMember_email());
+			joinCount=pstmt.executeUpdate();
+
+		}catch(Exception e) {
+			System.out.println("joinMember 실패 - "+e.getMessage());
+		}finally {
+			JDBCUtil.close(null, pstmt, null);
+		}
+
+		return joinCount;
+	}
+
+
 	
 }

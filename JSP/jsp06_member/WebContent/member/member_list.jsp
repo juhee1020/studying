@@ -50,15 +50,16 @@
 			</c:if>
 		</div>
 	
-		<form action="boardList.bo" class="form-line">
+		<form action="memberList.mem" class="form-line">
 			<div class="input-group">
 				<select name="f" id="" class="form-control col-sm-2 mr-wm-2">
 					<option ${ (param.f == "member_id") ? "selected" : "" } value="member_id">id</option>
 					<option ${ (param.f == "member_name") ? "selected" : "" } value="member_name">name</option>
+					<option ${ (param.f == "member_email") ? "selected" : "" } value="member_email">email</option>
 				</select>
 				<input type="text" name="q" value="${ param.q }" class="form-control col-sm-8 mr-sm-2" placeholder="검색어를 입력하세요..."/>
 				<button type="submit" class="btn btn-primary col-sm-1 mr-sm-2">검색</button>
-				<a href="boardWriteForm.bo?p=${p}&f=${f}&q=${q}" class="btn btn-success col-sm-1">회원추가</a>
+				<a href="memberJoinForm.mem?p=${p}&f=${f}&q=${q}" class="btn btn-success col-sm-1">회원추가</a>
 			</div>
 		</form>
 		<br class="mt-sm-5" />
@@ -71,6 +72,7 @@
 					<th>age</th>
 					<th>gender</th>
 					<th>email</th>
+					<th>수정</th>
 					<th>삭제</th>
 				</tr>
 			</thead>
@@ -79,10 +81,14 @@
 				<tr>
 					<td>${member.getMember_id()}</td>
 					<td>${member.getMember_name()}</td>
-					<td>${member.getMember_age()}</td>		
+					<td>${member.getMember_age()}</td>
+					<td>${member.getMember_gender()}</td>		
 					<td>${member.getMember_email()}</td>
-					<td align="center"><a href="memberDeleteForm.bo?member_id=${member.getMember_id()}&p=${p}&f=${f}&q=${q}" class="btn btn-danger">
-						<i class="fas fa-trash-alt"></i></a>
+					<td align="center"><a href="memberModifyForm.mem?member_id=${member.getMember_id()}&p=${p}&f=${f}&q=${q}" class="btn btn-warning">
+						<i class="fas fa-edit"></i></a>
+					</td>
+					<td align="center"><a href="memberDeleteForm.mem?member_id=${member.getMember_id()}&p=${p}&f=${f}&q=${q}" class="btn btn-danger">
+						<i class="fas fa-trash"></i></a>
 					</td>
 				</tr>
 			</c:forEach>

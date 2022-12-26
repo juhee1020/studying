@@ -35,17 +35,21 @@
     <fullyQualifiedTypeName name="javax.naming.Context"/>
     <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
     <fullyQualifiedTypeName name="member.action.Action"/>
-    <fullyQualifiedTypeName name="member.vo.ActionForward"/>
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="member.action.MemberListAction"/>
     <fullyQualifiedTypeName name="member.vo.PageInfo"/>
     <fullyQualifiedTypeName name="member.service.MemberListService"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
-    <fullyQualifiedTypeName name="member.dao.MemberDAO"/>
+    <fullyQualifiedTypeName name="java.lang.StrictMath"/>
+    <fullyQualifiedTypeName name="java.net.URLEncoder"/>
     <fullyQualifiedTypeName name="member.vo.MemberBean"/>
+    <fullyQualifiedTypeName name="member.service.MemberJoinService"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="member.dao.MemberDAO"/>
+    <fullyQualifiedTypeName name="member.vo.ActionForward"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="member.service.MemberDeleteService"/>
     <fullyQualifiedTypeName name="member.db.JDBCUtil"/>
 </qualifiedTypeNameHistroy>

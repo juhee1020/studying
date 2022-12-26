@@ -76,22 +76,3 @@ public class BoardWriteAction implements Action {
 			return forward;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

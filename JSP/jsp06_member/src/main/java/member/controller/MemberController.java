@@ -1,6 +1,6 @@
 package member.controller;
 
-import java.io.IOException;
+import java.io.IOException; 
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -43,6 +43,8 @@ public class MemberController extends HttpServlet{
 		String contextPath=req.getContextPath();
 		String command=requestURI.substring(contextPath.length());
 
+
+
 		if(command.equals("/memberList.mem")) {
 			action=new MemberListAction();
 			try{
@@ -50,6 +52,33 @@ public class MemberController extends HttpServlet{
 				}catch(Exception e){e.printStackTrace();}
 		}
 
+		
+		else if(command.equals("/memberJoinForm.mem")) {
+			forward = new ActionForward();
+			forward.setPath("/member/member_join.jsp?p="+p+"&f="+f+"&q="+q);
+		}
+
+
+		else if(command.equals("/memberJoin.mem")) {
+			action=new MemberJoinAction();
+			try{
+				forward = action.execute(req, res);
+				}catch(Exception e){e.printStackTrace();}
+		}
+
+
+		else if(command.equals("/memberDeleteForm.mem")) {
+			forward=new ActionForward();
+			forward.setPath("/member/member_delete.jsp?p="+p+"&f="+f+"&q="+q);
+		}
+
+
+		else if(command.equals("/memberDelete.mem")) {
+			action=new MemberDeleteAction();
+			try{
+				forward = action.execute(req, res);
+				}catch(Exception e){e.printStackTrace();}
+		}
 
 
 

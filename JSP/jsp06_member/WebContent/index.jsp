@@ -18,9 +18,7 @@
 			<h1>메인화면</h1>
 		</div>
 		<a href="memberList.mem?p=1&f=member_name&q=" class="btn btn-secondary">회원리스트</a><hr>
-		<a href="" class="btn btn-primary">회원가입</a><hr>
-		<a href="" class="btn btn-warning">정보수정</a><hr>
-		<a href="" class="btn btn-danger">회원탈퇴</a><hr>
+		<a href="memberJoinForm.mem?p=1&f=member_name&q=" class="btn btn-primary">회원가입</a><hr>
 	</div>
 </body>
 </html>
