@@ -67,9 +67,9 @@ public class MemberController extends HttpServlet{
 		}
 
 
-		else if(command.equals("/memberDeleteForm.mem")) {
+		else if(command.equals("/memberDelete.mem")) {
 			forward=new ActionForward();
-			forward.setPath("/member/member_delete.jsp?p="+p+"&f="+f+"&q="+q);
+			forward.setPath("memberList.mem?p="+p+"&f="+f+"&q="+q);
 		}
 
 

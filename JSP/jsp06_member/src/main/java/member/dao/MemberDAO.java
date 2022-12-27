@@ -119,5 +119,16 @@ public class MemberDAO {
 	}
 
 
+	public boolean isRightMember(String member_id) {
+
+		boolean isDeleteSuccess=false;
+
+		PreparedStatement pstmt=null;
+		String sql="select * from ";
+		
+		return isDeleteSuccess;
+	}
+
+
 	
 }

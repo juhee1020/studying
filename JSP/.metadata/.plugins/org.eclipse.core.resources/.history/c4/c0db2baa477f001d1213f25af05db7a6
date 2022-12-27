@@ -1,7 +1,0 @@
-package com.lec.web.exception;
-
-public class ServiceException {
-	public ServiceException(String message) {
-		super(message);
-	}
-}

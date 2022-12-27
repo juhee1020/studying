@@ -84,10 +84,10 @@
 					<td>${member.getMember_age()}</td>
 					<td>${member.getMember_gender()}</td>		
 					<td>${member.getMember_email()}</td>
-					<td align="center"><a href="memberModifyForm.mem?member_id=${member.getMember_id()}&p=${p}&f=${f}&q=${q}" class="btn btn-warning">
+					<td align="center"><a href="member_check_edit.jsp?member_id=${member.getMember_id()}&p=${p}&f=${f}&q=${q}" class="btn btn-warning">
 						<i class="fas fa-edit"></i></a>
 					</td>
-					<td align="center"><a href="memberDeleteForm.mem?member_id=${member.getMember_id()}&p=${p}&f=${f}&q=${q}" class="btn btn-danger">
+					<td align="center"><a href="member_check_delete.jsp?member_id=${member.getMember_id()}&p=${p}&f=${f}&q=${q}" class="btn btn-warning">
 						<i class="fas fa-trash"></i></a>
 					</td>
 				</tr>

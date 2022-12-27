@@ -32,14 +32,14 @@
 	<div class="container" align="center">
 		<div class="jumbotron"><h1>회원가입</h1></div>
 
-		<form action="memberJoin.mem?p=${p}&f=${f}&q=${q}" method="post" class="form-group">
+		<form action="memberModify.mem?p=${p}&f=${f}&q=${q}" method="post" class="form-group">
 			<div class="form-group input-group">
 				<div class="input-group-prepend"><span class="input-group-text">id</span></div>
 				<input type="text" class="form-control" name="member_id" id="member_id" value="${member.getMember_id()}"/>
 			</div>
 			<div class="form-group input-group">
 				<div class="input-group-prepend"><span class="input-group-text">pw</span></div>
-				<input type="password" class="form-control" name="member_pw" id="member_pw" value="${member.getMember_}"/>
+				<input type="password" class="form-control" name="member_pw" id="member_pw" required/>
 			</div>
 			<div class="form-group input-group">
 				<div class="input-group-prepend"><span class="input-group-text">name</span></div>
@@ -59,7 +59,7 @@
 			</div>
 			<div class="form-group mt-md-5">
 				<input type="reset" class="btn btn-success float-right login-btn ml-sm-2" value="새로고침"/>
-				<input type="submit" class="btn btn-success float-right login-btn" value="글등록"/>
+				<input type="submit" class="btn btn-success float-right login-btn" value="회원수정"/>
 			</div>
 		</form>
 	</div>

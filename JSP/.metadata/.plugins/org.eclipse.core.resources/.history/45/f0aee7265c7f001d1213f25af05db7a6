@@ -1,9 +1,0 @@
-package com.lec.web.service;
-
-public class WriteMessageService {
-	private WriteMessageService() {}
-	private static WriteMessageService instance=new WriteMessageService();
-	public static WriteMessageService getInstance() {
-		return instance;
-	}
-}

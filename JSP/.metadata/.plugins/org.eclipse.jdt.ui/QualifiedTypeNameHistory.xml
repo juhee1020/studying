@@ -46,10 +46,10 @@
     <fullyQualifiedTypeName name="java.net.URLEncoder"/>
     <fullyQualifiedTypeName name="member.vo.MemberBean"/>
     <fullyQualifiedTypeName name="member.service.MemberJoinService"/>
+    <fullyQualifiedTypeName name="member.vo.ActionForward"/>
+    <fullyQualifiedTypeName name="member.service.MemberDeleteService"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="member.dao.MemberDAO"/>
-    <fullyQualifiedTypeName name="member.vo.ActionForward"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="member.service.MemberDeleteService"/>
     <fullyQualifiedTypeName name="member.db.JDBCUtil"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 </qualifiedTypeNameHistroy>
