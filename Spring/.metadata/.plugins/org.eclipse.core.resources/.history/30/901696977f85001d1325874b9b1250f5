@@ -1,0 +1,22 @@
+package com.lec.basic.poly4;
+
+public class LGTV implements TV{
+
+	private Speaker speaker;
+	private int price;
+
+	public LGTV() {System.out.println("lgtv 객체생성");}
+
+	@Override
+	public void powerOn() {}
+
+	@Override
+	public void powerOff() {}
+
+	@Override
+	public void volumnUp() {}
+
+	@Override
+	public void volumnDown() {}
+
+}

@@ -1,0 +1,31 @@
+package com.lec.basic.scan;
+public class LGtv implements TV{
+
+	public LGtv() {}
+	
+	@Override
+	public void powerOn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void powerOff() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void volumnUp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void volumnDown() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

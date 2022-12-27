@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="collectionBean" class="com.lec.basic.collection.CollectionBean">
+		<property name="addressList">
+			<list>
+				<value>서울시 서초구 이젠 캠퍼스1</value>
+				<value>서울시 강남구 이젠 캠퍼스2</value>
+			</list>
+		</property>
+		<property name="addressSet">
+			<set value-type="java.lang.String"><!-- set은 value-type줘야함 -->
+				<value></value>
+			</set>
+		</property>
+	</bean>
+</beans>

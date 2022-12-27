@@ -1,0 +1,25 @@
+package com.lec.basic.poly;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class TVuser3 {
+
+	public static void main(String[] args) {
+
+		// applicationContext.xml 가져온다.
+
+			// 1. Spring 컨테이너 구동
+			AbstractApplicationContext factory=new GenericXmlApplicationContext("applicationContext.xml");
+			System.out.println("---------------------");
+
+			// 2. 필요한 객체를 String컨테이너에게 요청
+			TV tv1=(TV)factory.getBean("lgtv");
+			TV tv2=(TV)factory.getBean("lgtv");
+			TV tv3=(TV)factory.getBean("lgtv");
+			
+
+			// 3. Spring 컨테이너 종료
+			factory.close();
+		}
+}

@@ -1,0 +1,43 @@
+package com.lec.web;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("boardService")
+public class BoardServiceImpl implements BoardService{
+
+	@Autowired
+	private BoardDAO boardDAO;
+
+	public BoardServiceImpl() {
+		System.out.println("==> BoardService 객체 생성");
+	}
+
+	@Override
+	public int insertBoard(BoardVO vo) {
+		return boardDAO.insertBoard(vo);
+	}
+
+	@Override
+	public int deleteBoard(int vo) {
+		return boardDAO.deleteBoard(vo);
+	}
+
+	@Override
+	public BoardVO updateBoard(BoardVO vo) {
+		return boardDAO.updateBoard(vo);
+	}
+
+	@Override
+	public BoardVO getBoard(int vo) {
+		return boardDAO.getBoard(vo);
+	}
+
+	@Override
+	public List<BoardVO> getBoardList(BoardVO vo) {
+		return boardDAO.getBoardList(vo);
+	}
+
+}

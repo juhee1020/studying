@@ -1,0 +1,12 @@
+package com.lec.basic.scan;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericApplicationContext;
+
+public class TVUser {
+
+	public static void main(String[] args) {
+
+		AbstractApplicationContext factory=new GenericApplicationContext("componentScan.xml");
+	}
+}

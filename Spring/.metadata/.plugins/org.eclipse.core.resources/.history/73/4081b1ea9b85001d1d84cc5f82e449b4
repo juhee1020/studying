@@ -1,0 +1,37 @@
+package com.lec.web;
+
+import java.util.List;import java.sql.*;
+
+import org.springframework.stereotype.Repository;
+
+@Repository("boardDAO")
+public class BoardDAO {
+
+	private Connection conn=null;
+	private PreparedStatement pstmt=null;
+	private ResultSet rs=null;
+
+	private String insert="";
+	private String update="";
+	private String delete="";
+	private String select="";
+	private String boardList="";
+	
+
+	public void insertBoard(BoardVO vo) {	
+	}
+
+	public void deleteBoard(BoardVO vo) {	
+	}
+
+	public void updateBoard(BoardVO vo) {	
+	}
+
+	public BoardVO getBoard(BoardVO vo) {
+		return null;
+	}
+
+	public List<BoardVO> getBoardList(BoardVO vo) {
+		return null;
+	}
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--	
+	<bean id="tv" class="com.lec.basic.poly4.LGTV">
+		<property name="speaker" ref="apple"/> //세터 통해서 주입 / name="speaker" 얘가 setSpeaker 찾고 매개변수로 apple 넣는다?
+		<property name="price" value="2500000"/> //setPrice와 동일 
+	</bean>
+-->
+
+	<!-- namespace:p 선택한 경우 -->
+	<!-- p:speaker-ref / setSpeaker()와 동일 -->
+	<!-- p:price / setPrice()와 동일 -->
+
+	<bean id="tv" class="com.lec.basic.poly4.LGTV" 
+			p:speaker-ref="apple"
+			p:price="250000"/> <!-- price는 기본타입이라 -ref 안붙는다. -->
+
+	<bean id="apple" class="com.lec.basic.poly4.AppleSpeaker"></bean>
+	<bean id="sony" class="com.lec.basic.poly4.SonnySpeaker"></bean>
+
+</beans>

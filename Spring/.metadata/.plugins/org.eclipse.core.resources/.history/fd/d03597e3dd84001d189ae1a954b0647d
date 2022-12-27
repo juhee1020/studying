@@ -1,0 +1,9 @@
+package com.lec.basic.poly;
+
+public class SonnySpeaker {
+
+	public SonnySpeaker() {System.out.println("==> SonnySpeaker 객체 생성");}
+	
+	public void volummUp() {System.out.println("볼륨업");}
+	public void volummDown() {System.out.println("볼륨다운");}
+}

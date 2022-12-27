@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="ss" class="com.lec.basic.poly4.LGTV">
+		<!--  <constructor-arg index="0" ref="apple"/> -->
+		<!-- <constructor-arg index="1" value="27000"/>  -->
+		<property name="speaker" ref="apple"/> <!-- 세터 통해서 주입 / name="speaker" 얘가 setSpeaker 찾고 매개변수로 apple 넣는다? -->
+		<property name="price" value="2500000"/>
+	</bean>
+
+	<bean id="apple" class="com.lec.basic.poly4.AppleSpeaker"></bean>
+	<bean id="sony" class="com.lec.basic.poly4.SonnySpeaker"></bean>
+
+</beans>

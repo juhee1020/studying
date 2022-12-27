@@ -1,0 +1,31 @@
+package com.lec.basic.annotation;
+
+
+public class LGtv implements TV{
+
+	private Speaker speaker;
+	private int price;
+
+	public LGtv() {System.out.println("lgtv 객체생성");}
+
+	@Override
+	public void powerOn() {
+		System.out.println("lgtv powerOn / price: " +this.price);
+	}
+
+	@Override
+	public void powerOff() {
+		System.out.println("lgtv powerOff");
+	}
+
+	@Override
+	public void volumnUp() {
+		this.speaker.volumnUp();
+	}
+
+	@Override
+	public void volumnDown() {
+		this.speaker.volumnDown();
+	}
+
+}

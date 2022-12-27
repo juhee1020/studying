@@ -1,0 +1,46 @@
+package com.lec.basic.annotation;
+
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+import com.lec.basic.poly4.Speaker;
+
+@Component("tv")
+public class LGtv implements TV{
+
+	// @Autowired는 변수나 메서드 위에 선언할수잇다. 
+	// 변수위에 선언된 경우는 @Qualifier과 같이 사용할 수 있다.
+	// 변수위에서 : @Resource = Autowired + Qualifier
+	//@Resource
+	@Autowired@Qualifier("sony")
+	private Speaker speaker;
+	private int price;
+
+	public LGtv() {System.out.println("lgtv 객체생성");}
+
+	@Override
+	public void powerOn() {
+		System.out.println("lgtv powerOn / price: " +this.price);
+	}
+
+	@Override
+	public void powerOff() {
+		System.out.println("lgtv powerOff");
+	}
+
+	@Override
+	public void volumnUp() {
+		this.speaker.volumnUp();
+	}
+
+	@Override
+	public void volumnDown() {
+		this.speaker.volumnDown();
+	}
+
+	public void setSpeaker(Speaker speaker) {this.speaker = speaker;}
+	public void setPrice(int price) {this.price = price;}
+}
