@@ -1,0 +1,17 @@
+package com.lec.mvc.controller;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.lec.mvc.vo.UserVO;
+
+@Controller
+public class UserController {
+
+	@RequestMapping("getUserList.do")
+	public String getUserList(UserVO userVO, Model model) {
+		return "";
+	}
+}

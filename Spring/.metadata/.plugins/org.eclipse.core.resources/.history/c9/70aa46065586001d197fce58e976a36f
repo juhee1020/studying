@@ -1,0 +1,16 @@
+package com.lec.mvc.dao;
+import org.springframework.stereotype.Repository;
+
+import com.lec.mvc.vo.UserVO;
+
+@Repository("userDAO")
+public class UserDAO {
+
+	public UserVO getUser() {
+
+		
+
+		return null;
+	}
+
+}

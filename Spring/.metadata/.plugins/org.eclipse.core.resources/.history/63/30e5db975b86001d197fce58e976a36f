@@ -1,0 +1,44 @@
+package com.lec.mvc.controller;
+import javax.servlet.http.HttpSession;
+
+//import org.apache.coyote.http11.upgrade.UpgradeServletOutputStream;
+//import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.lec.mvc.dao.UserDAO;
+import com.lec.mvc.vo.UserVO;
+
+
+
+@Controller
+public class LoginController {
+
+	@RequestMapping(value="/login.do", method=RequestMethod.GET)
+	public String login(UserVO user, HttpSession sess) {
+		//UserVO user 라고 해도 이 user는 userVO로 넘어간다.
+
+		user.setId("maple@gmail.com");
+		user.setPassword("12345");
+		
+		sess.setAttribute("isLoginSuccess", true);
+		//sess.setAttribute("isLoginSuccess", false);
+
+		return "login/login.jsp";
+	}
+	
+	@RequestMapping(value="/login.do", method=RequestMethod.POST)
+	public String login(UserVO userVO, UserDAO userDAO, HttpSession sess) {
+		//System.out.println(userVO.getId()); // 들어온다.
+
+		UserVO user = userDAO.getUser(userVO.getId());
+
+		if(user==null) {
+			sess.setAttribute("isLoginSuccess", false);
+		}
+
+		System.out.println(user.toString());
+		return null;
+	}
+}
