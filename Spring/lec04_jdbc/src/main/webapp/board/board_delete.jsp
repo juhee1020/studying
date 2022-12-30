@@ -24,6 +24,8 @@
 			<input type="hidden" name="seq" value="${board.getSeq()}">
 			<button type="submit" class="btn btn-danger text-white"><b>${ board.getTitle()}</b>를 삭제하겠습니까?</button>
 		</form>
+		<br>
+		<a href="boardList.do" class="btn btn-secondary text-white">목록으로 돌아가기</a>
 	</div>		
 </body>
 </html>		

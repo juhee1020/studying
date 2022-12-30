@@ -36,7 +36,9 @@ public class BoardDAO {
 		if(totalCount>0) {
 			totalPages = (int)(totalCount / perPage) + ((totalCount % perPage == 0) ? 0 : 1);
 			startPage = (int)(currentPage / perPage) * perPage + 1 + ((currentPage % perPage == 0) ? -perPage : 0);
-			endPage = (startPage >= totalPages) ? totalPages : startPage + perPage - 1;
+			
+			endPage = (totalPages-startPage<9) ? startPage+(totalPages%perPage)-1 : startPage+perPage-1;
+			if(startPage==totalPages)endPage=totalPages;
 		}
 				
 		pageInfo.setTotalCount(totalCount);
@@ -51,7 +53,7 @@ public class BoardDAO {
 
 	
 	public List<BoardVO> getBoardList(int currentPage, int perPage){
-		String sql="select * from board limit ?,?";
+		String sql="select * from board WHERE (SELECT @ROWNUM:=0)=0 order by seq desc limit ?,?";
 		Object[] args= {(currentPage-1)*perPage, perPage}; 
 		// 이거 걍 {currentPage, perPage}면 첫번째 글이 안나옴 (첫번째꺼는 인덱스가 0이라서 그런듯?)
 		return jdbcTemplate.query(sql, args, new BoardRowMapper());
@@ -64,6 +66,11 @@ public class BoardDAO {
 		jdbcTemplate.update(sql1);
 		String sql="select * from board where seq="+seq;
 		//BoardVO boardVO=(BoardVO)jdbcTemplate.queryForObject(sql, new BoardRowMapper());
+		return (BoardVO)jdbcTemplate.queryForObject(sql, new BoardRowMapper());
+	}
+	
+	public BoardVO selectBoard_up_de(int seq) {
+		String sql="select * from board where seq="+seq;
 		return (BoardVO)jdbcTemplate.queryForObject(sql, new BoardRowMapper());
 	}
 

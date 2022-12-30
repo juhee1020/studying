@@ -39,6 +39,8 @@
 			<input type="hidden" name="seq" id="seq" class="form-control" value="${board.getSeq()}">
 			<button type="submit" class="btn btn-primary text-white"><b>"${board.getTitle()}"</b>를 수정하겠습니까?</button>
 		</form>
+		<br>
+		<a href="boardList.do" class="btn btn-secondary text-white">목록으로 돌아가기</a>
    </div>
 </body>
 </html>

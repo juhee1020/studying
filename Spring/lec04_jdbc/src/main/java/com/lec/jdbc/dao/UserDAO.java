@@ -37,7 +37,8 @@ public class UserDAO {
 		if(totalCount>0) {
 			totalPages = (int)(totalCount / perPage) + ((totalCount % perPage == 0) ? 0 : 1);
 			startPage = (int)(currentPage / perPage) * perPage + 1 + ((currentPage % perPage == 0) ? -perPage : 0);
-			endPage = (startPage >= totalPages) ? totalPages : startPage + perPage - 1;
+			endPage = (totalPages-startPage<9) ? startPage+(totalPages%perPage)-1 : startPage+perPage-1;
+			if(startPage==totalPages)endPage=totalPages;
 		}
 				
 		pageInfo.setTotalCount(totalCount);
@@ -63,7 +64,7 @@ public class UserDAO {
 	
 		String sql = "select * from user limit ?, ?";
 
-		Object[] args= {currentPage, perPage};
+		Object[] args= {(currentPage-1)*perPage, perPage};
 
 		return jdbcTemplate.query(sql, args, new UserRowMapper());
 	}

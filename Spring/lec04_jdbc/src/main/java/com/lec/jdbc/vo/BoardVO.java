@@ -10,6 +10,7 @@ public class BoardVO {
 	private String content;
 	private Date regdate;
 	private int cnt;
+	//private int rownum;
 
 
 	public int getSeq() {return seq;}
@@ -29,6 +30,9 @@ public class BoardVO {
 
 	public int getCnt() {return cnt;}
 	public void setCnt(int cnt) {this.cnt = cnt;}
+
+	//public int getRownum() {return rownum;}
+	//public void setRownum(int rownum) {this.rownum = rownum;}
 
 
 	@Override

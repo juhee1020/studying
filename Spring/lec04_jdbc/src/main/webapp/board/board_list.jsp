@@ -22,6 +22,7 @@
 			
 		</div>
 		<br>
+		<!--  <div><a href=""></a></div>-->
 
 		<table class="table table-hover">
 			<thead>
@@ -51,34 +52,35 @@
 			
 			<div class="col-sm-2">
 				<!-- button trigger modal form - user add -->
-				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUser">사용자등록</button>
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBoard">게시글 작성</button>
 			</div>
 			
 			<div class="col-sm-auto">
 				
 				<ul class="pagination justify-content-center">					
 					<c:if test="${ pageInfo.getStartPage() != 1 }">
-						<li class="page-item"><a href="getUserList.do?p=1" class="page-link"><i class="fas fa-fast-backward"></i></a></li>
-						<li class="page-item"><a href="getUserList.do?p=${ pageInfo.getStartPage() - 10 }" class="page-link"><i class="fas fa-backward"></i></a></li>				
+						<li class="page-item"><a href="boardList.do?p=1" class="page-link"><i class="fas fa-fast-backward"></i></a></li>
+						<li class="page-item"><a href="boardList.do?p=${ pageInfo.getStartPage() - 10 }" class="page-link"><i class="fas fa-backward"></i></a></li>				
 					</c:if>
 				
 					<c:set var="cp" value="${ pageInfo.getCurrentPage() }"/>
 				
 					<c:forEach var="page" begin="${ pageInfo.getStartPage() }" end="${ pageInfo.getEndPage() }">
-						<li class="page-item ${ (cp==page) ? 'active' : ''}"><a href="getUserList.do?p=${page}" class="page-link">${page}</a></li>
+						<li class="page-item ${ (cp==page) ? 'active' : ''}"><a href="boardList.do?p=${page}" class="page-link">${page}</a></li>
 					</c:forEach>
 					
 					<c:if test="${ pageInfo.getEndPage() < pageInfo.getTotalPages() }">
-						<li class="page-item"><a href="getUserList.do?p=${ pageInfo.getEndPage() + 1 }" class="page-link"><i class="fas fa-forward"></i></a></li>				
-						<li class="page-item"><a href="getUserList.do?p=${ pageInfo.getTotalPages() }" class="page-link"><i class="fas fa-fast-forward"></i></a></li>				
+						<li class="page-item"><a href="boardList.do?p=${ pageInfo.getEndPage() + 1 }" class="page-link"><i class="fas fa-forward"></i></a></li>				
+						<li class="page-item"><a href="boardList.do?p=${ pageInfo.getTotalPages() }" class="page-link"><i class="fas fa-fast-forward"></i></a></li>				
 					</c:if>
 				</ul>
 			</div>
 		</div>
 	</div>	
 	
-	<!--사용자등록 modal form  -->
-	<div id="addUser" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tableindex="-1"
+
+	 
+	<div id="addBoard" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tableindex="-1"
 		aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		<div class="modal-dialog">
 		
@@ -89,7 +91,6 @@
 					<div class="modal-header">
 						<h1 class="motal-title fs-5" id="staticBackdropLabel">게시글 등록하기</h1>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div> <!-- modal-header -->
 					
 					<div class="modal-body">
 						<div class="input-group mb-3">
@@ -104,15 +105,17 @@
 							<div class="input-group-text"><i class="fas fa-address-book"></i></div>
 							<input type="text" name="content" class="form-control" id="content" required placeholder="내용....">
 						</div>
-					</div> <!-- modal-body -->
+					</div>
  					
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
 						<button type="submit" class="btn btn-primary">게시글등록</button>
-					</div> <!-- modal-footer -->
-				</div> <!-- modal-content -->
+					</div>
+				</div>
 			</form>	
-		</div> <!-- modal diaglog -->
-	</div> <!-- modal end -->
+		</div>
+	</div>
+	
+
 </body>
 </html>

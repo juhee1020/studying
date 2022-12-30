@@ -34,6 +34,11 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override
+	public BoardVO selectBoard_up_de(int seq) {
+		return boardDAO.selectBoard_up_de(seq);
+	}
+	
+	@Override
 	public void insertBoard(BoardVO board) {
 		boardDAO.insertBoard(board);
 	}
