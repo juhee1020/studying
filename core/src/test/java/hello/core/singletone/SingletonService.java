@@ -25,6 +25,8 @@ public class SingletonService {
         System.out.println("싱글톤 객체 로직 호출");
     }
 
+
+
     @Test
     @DisplayName("싱글톤 패턴을 적용한 객체 사용")
     public void singletonServiceTest() {
@@ -39,6 +41,7 @@ public class SingletonService {
         System.out.println("singletonService2 = " + singletonService2);
         // singletonService1 == singletonService2
         assertThat(singletonService1).isSameAs(singletonService2);
+        // is이퀄이랑 is세임이랑 > same : == / equal
         singletonService1.logic();
     }
 
