@@ -6,9 +6,12 @@ async function getDate(area_select){
 
     const locations=data.response.body.items.item.filter(spot => spot.orgNm.substr(0,2)==area_select);
 
-    drawMap(locations);
+    //drawMap(locations);
+    drawMap(locations, area_select);
 }
-getDate();
+
+
+getDate(); // 이거 없으면 처음에 지도 안뜨다가 select에서 바꿔주면 그때뜸
 
 
 function selectArea(){
@@ -21,12 +24,28 @@ function selectArea(){
 // 카카오 - 여러개 마커에 이벤트 등록하기1
 // https://apis.map.kakao.com/web/sample/multipleMarkerEvent/
 
-function drawMap(locations){
+function drawMap(locations, area_select){
+
+    var center_area=null;
+
+// https://apis.map.kakao.com/web/sample/addMapClickEventWithMarker/ <- 마크 찍으면 위도경도 알려줌
+    if(area_select=='대구'){
+        center_area={
+            center: new kakao.maps.LatLng(35.871389, 128.601564),
+            level: 10
+        };}
+    else if(area_select=='부산'){
+        center_area={
+            center: new kakao.maps.LatLng(35.268543, 129.075210),
+            level: 10
+        };}
+    else {center_area={
+        center: new kakao.maps.LatLng(37.541, 126.986), // 서울, 경기
+        level: 10 // 지도의 확대 레벨
+    };}
+
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-        mapOption = {
-            center: new kakao.maps.LatLng(37.541, 126.986), // 지도의 중심좌표
-            level: 10 // 지도의 확대 레벨
-        };
+        mapOption = center_area;
 
     var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 

@@ -10,20 +10,33 @@
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <h1>소셜 로그인</h1>
-<a href="#"><img src='kakao_login_medium_wide.png'></a>
+<span th:if="${id==null}">
+    <a href="https://kauth.kakao.com/oauth/authorize?client_id=fd4d084843e55e30b81a2e205d271930&redirect_uri=http://localhost:8080/user/kakao&response_type=code"><img src='kakao_login_medium_wide.png'></a>
+</span>
+<span th:if="${id!=null}">
+    <form name="logout" action="http://localhost:8080/logout">
+        <input type="submit" value="로그아웃">
+    </form>
+</span>
+<br>
+<a href="#"><img src='btn_google_signin_light_pressed_web.png'></a>
+<br>
+<a href="#"><img src='btnG_완성형.png' width="200px"></a>
 <hr>
 <h1>지도 하고 잇는 중</h1>
 <!-- 지도를 표시할 div 입니다 -->
 <!-- 지도는 localhost:8080으로 해야 열림. 그냥 index.html만 열면 에러 -->
 <select id="area" onchange="selectArea()"> <!--aria-label=".form-select-lg example-->
-    <option selected>지역을 선택해주세요.</option>
-    <option value="서울">서울</option>
+    <!--<option selected>지역을 선택해주세요.</option>-->
+    <option selected value="서울">서울</option>
     <option value="경기">경기도</option>
     <option value="인천">인천</option>
     <option value="대전">대전</option>
     <option value="대구">대구</option>
     <option value="부산">부산</option>
-
+    <option value="울산">울산</option>
+    <option value="광주">광주</option>
+    <option value="제주">제주</option>
 </select>
 <div id="map" style="width:500px;height:500px;"></div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=680531978ab426a7e809968516cc71d7"></script>
